@@ -1,0 +1,27 @@
+{
+  "name": "techgroundqa-q2-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffeestainio/techgroundqa-q2-2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coffeestainio/techgroundqa-q2-2021/issues"
+  },
+  "homepage": "https://github.com/coffeestainio/techgroundqa-q2-2021#readme",
+  "devDependencies": {
+    "@wdio/cli": "^7.6.0",
+    "@wdio/local-runner": "^7.6.0",
+    "@wdio/mocha-framework": "^7.6.0",
+    "@wdio/spec-reporter": "^7.6.0",
+    "chromedriver": "^90.0.0",
+    "wdio-chromedriver-service": "^7.0.0"
+  }
+}
