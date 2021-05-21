@@ -1,1 +1,0 @@
-# techgroundqa-q2-2021

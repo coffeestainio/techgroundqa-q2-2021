@@ -1,0 +1,19 @@
+{
+  "name": "semana1dia2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:reverse": "npx mocha reverse.spec.js",
+    "test:grep": "npx mocha hooks.spec.js --grep='test 1'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "mocha": "^8.4.0"
+  },
+  "dependencies": {
+    "react": "^0.21.1"
+  }
+}
