@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1622168857282' stop='1622168858537'>
+    <name>Find my benefits</name>
+    <title>Find my benefits</title>
+    <test-cases>
+        <test-case start='1622168857283' status='broken' stop='1622168858535'>
+            <name>should be able to navigate to find my benefits from the home page</name>
+            <title>should be able to navigate to find my benefits from the home page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome Headless-90.0.4430.212'/>
+                <parameter kind='argument' name='browser' value='Chrome Headless-90.0.4430.212'/>
+            </parameters>
+            <steps>
+                <step start='1622168857291' status='broken' stop='1622168858534'>
+                    <name>navigateTo</name>
+                    <title>navigateTo</title>
+                    <attachments>
+                        <attachment title='Request' source='1e7bc923-5db5-40bc-bd38-39f458e0bd08-attachment.json' type='application/json' size='40'/>
+                    </attachments>
+                    <steps>
+                        <step start='1622168857365' status='broken' stop='1622168858534'>
+                            <name>findElement</name>
+                            <title>findElement</title>
+                            <attachments>
+                                <attachment title='Request' source='d8d4810e-083c-4c00-9473-e533a36cc87a-attachment.json' type='application/json' size='74'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Protocol error (Runtime.evaluate): Target closed.</message>
+                <stack-trace>Protocol error (Runtime.evaluate): Target closed.
+                Error: Protocol error (Runtime.evaluate): Target closed.
+                    at /Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Connection.js:208:63
+                    at new Promise (&lt;anonymous>)
+                    at CDPSession.send (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/Connection.js:207:16)
+                    at ExecutionContext._evaluateInternal (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/ExecutionContext.js:166:18)
+                    at ExecutionContext.evaluateHandle (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/ExecutionContext.js:155:21)
+                    at /Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/DOMWorld.js:102:44
+                    at processTicksAndRejections (node:internal/process/task_queues:93:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

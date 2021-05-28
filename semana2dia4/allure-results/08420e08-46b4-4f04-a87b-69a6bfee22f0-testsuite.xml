@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1622168898456' stop='1622168900751'>
+    <name>Find my benefits</name>
+    <title>Find my benefits</title>
+    <test-cases>
+        <test-case start='1622168898456' status='broken' stop='1622168900749'>
+            <name>should be able to navigate to find my benefits from the home page</name>
+            <title>should be able to navigate to find my benefits from the home page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-90.0.4430.212'/>
+                <parameter kind='argument' name='browser' value='Chrome-90.0.4430.212'/>
+            </parameters>
+            <steps>
+                <step start='1622168898461' status='broken' stop='1622168900749'>
+                    <name>navigateTo</name>
+                    <title>navigateTo</title>
+                    <attachments>
+                        <attachment title='Request' source='ef667451-d0cf-4771-904e-9158f23a40df-attachment.json' type='application/json' size='40'/>
+                    </attachments>
+                    <steps>
+                        <step start='1622168898468' status='passed' stop='1622168900737'>
+                            <name>findElement</name>
+                            <title>findElement</title>
+                            <attachments>
+                                <attachment title='Request' source='7e184d0d-87f2-489f-a121-5f10a5ec5bc3-attachment.json' type='application/json' size='74'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                        <step start='1622168900743' status='broken' stop='1622168900749'>
+                            <name>findElement</name>
+                            <title>findElement</title>
+                            <attachments>
+                                <attachment title='Request' source='dabbd110-8eee-44a4-af59-7e704faadfca-attachment.json' type='application/json' size='74'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Evaluation failed: DOMException: Failed to execute 'querySelector' on 'Document': '[routerLink=/vision-insurance]' is not a valid selector.
+                    at __puppeteer_evaluation_script__:1:33</message>
+                <stack-trace>Evaluation failed: DOMException: Failed to execute 'querySelector' on 'Document': '[routerLink=/vision-insurance]' is not a valid selector.
+                    at __puppeteer_evaluation_script__:1:33
+                Error: Evaluation failed: DOMException: Failed to execute 'querySelector' on 'Document': '[routerLink=/vision-insurance]' is not a valid selector.
+                    at __puppeteer_evaluation_script__:1:33
+                    at ExecutionContext._evaluateInternal (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/ExecutionContext.js:221:19)
+                    at processTicksAndRejections (node:internal/process/task_queues:93:5)
+                    at async ElementHandle.evaluateHandle (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/JSHandle.js:120:16)
+                    at async Object.internalHandler.queryOne (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/QueryHandler.js:24:30)
+                    at async DOMWorld.$ (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/puppeteer-core/lib/cjs/puppeteer/common/DOMWorld.js:95:23)
+                    at async DevToolsDriver.findElement (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/devtools/build/utils.js:89:15)
+                    at async Browser.wrappedCommand (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/devtools/build/devtoolsdriver.js:75:26)
+                    at async Browser.wrapCommandFn (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/@wdio/utils/build/shim.js:78:29)
+                    at async Browser.$ (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/webdriverio/build/commands/browser/$.js:83:17)
+                    at async Browser.wrapCommandFn (/Users/pjcalvo/Documents/repos-course/techgroundqa-q2-2021/semana2dia4/node_modules/@wdio/utils/build/shim.js:78:29)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

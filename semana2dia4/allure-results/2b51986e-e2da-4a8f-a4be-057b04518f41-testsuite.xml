@@ -1,0 +1,52 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1622168977538' stop='1622168979792'>
+    <name>Find my benefits</name>
+    <title>Find my benefits</title>
+    <test-cases>
+        <test-case start='1622168977538' status='passed' stop='1622168979790'>
+            <name>should be able to navigate to find my benefits from the home page</name>
+            <title>should be able to navigate to find my benefits from the home page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome-90.0.4430.212'/>
+                <parameter kind='argument' name='browser' value='Chrome-90.0.4430.212'/>
+            </parameters>
+            <steps>
+                <step start='1622168977547' status='undefined'>
+                    <name>navigateTo</name>
+                    <title>navigateTo</title>
+                    <attachments>
+                        <attachment title='Request' source='5b087790-1e95-4622-a6b1-652a6d78757e-attachment.json' type='application/json' size='40'/>
+                    </attachments>
+                    <steps>
+                        <step start='1622168977567' status='passed' stop='1622168979770'>
+                            <name>findElement</name>
+                            <title>findElement</title>
+                            <attachments>
+                                <attachment title='Request' source='17bd8942-f4e4-4d9f-a567-a343a708fdf6-attachment.json' type='application/json' size='78'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                        <step start='1622168979778' status='passed' stop='1622168979782'>
+                            <name>findElement</name>
+                            <title>findElement</title>
+                            <attachments>
+                                <attachment title='Request' source='69e94916-44c8-4ba6-8200-46c836cf3f7e-attachment.json' type='application/json' size='78'/>
+                                <attachment title='Response' source='ca3ab667-c3b8-48a6-b598-d1acea44c96a-attachment.json' type='application/json' size='56'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
