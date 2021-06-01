@@ -1,37 +1,86 @@
+const HomePage = require('../pageobjects/home.page');
+const VisionInsurance = require('../pageobjects/vision-insurance.page');
+
+let userData =  {}
+
 describe('Find my benefits',() => {
 
-    before(()=> {
+    before(async ()=> {
+        // leer datos de un archivo
+        userData =  {
+            firsName: 'Juan',
+            lastName: 'Gutierrez',
+            zipCode: 84001,
+            birthDate: {
+                day: 8,
+                month: 'Apr',
+                year: 1989
+            }
+        }
+        
         // vaya al home page
         await browser.url('/');
     });
 
-    it('should be able to navigate to find my benefits from the home page', async () => {
-        const routerLink = await $('[routerLink="/vision-insurance"]');
+    it('should be able to navigate to find my benefits from the home page', async () => {       
+        // acciones
+        const routerLink = await HomePage.linkFindMyBenefits;
         await routerLink.click();
         
-        await expect(browser).toHaveUrlContaining('/vision-insurance');
-        const searchCard = await $('.search-card');
-        await expect(searchCard).toBeDisplayed();
+        // verificacion
+        await expect(browser).toHaveUrlContaining(VisionInsurance.pageTitle);
+        await expect(await VisionInsurance.cardSearch).toBeDisplayed();
+
+        // this is to avoid conflicts with page refresh
+        await browser.pause('3000');
     });
 
-    it ('should display UI elements' , () => {
-        // validar que todos los elementos existan
+    it('should be able to enter user data' , async () => {
+        const firstName = await VisionInsurance.inputFirstName;
+        const lastName = await VisionInsurance.inputLastName; 
+        const zipCode = await VisionInsurance.inputZipCode;
+
+        await firstName.click();
+        await firstName.setValue(userData.firsName);
+        await lastName.setValue(userData.lastName);
+        await zipCode.setValue(userData.zipCode);
+
+        await firstName.click();
+
+        const firstNameWrapper = await VisionInsurance.wrapperFirstName;
+        const lastNameWrapper = await VisionInsurance.wrapperLastName;
+        const zipCodeWrapper = await VisionInsurance.wrapperZipCode;
+        
+        await expect(firstNameWrapper).toHaveElementClass('is-valid');
+        await expect(lastNameWrapper).toHaveElementClass('is-valid');
+        await expect(zipCodeWrapper).toHaveElementClass('is-valid');
+
     });
 
-    it ('should be able to enter user data' , async () => {
+    it ('should be able to select the birth date' , async () => {
 
-        const firstName = await $('[fieldname=firstName] input');
-        const lastName = await $('[fieldname=lastName] input');
-        const zipCode = await $('[fieldname=zipCode] input');
+        // acciones
+        const selectMonth = await VisionInsurance.selectMonth;
+        const selectDay = await VisionInsurance.selectDay;
+        const selectYear = await VisionInsurance.selectYear;
 
-        await firstName.setValue('Gabriel');
-        await lastName.setValue('Ruiz');
-        await zipCode.setValue('84001');
+        await selectMonth.selectByVisibleText(userData.birthDate.month);
+        await selectDay.selectByAttribute('value', userData.birthDate.day);
+        await selectYear.selectByAttribute('value', userData.birthDate.year);
 
-        await browser.saveScreenshot('./file.png')
+        // validaciones
+
     });
 
-    // browser.pause
-    // browser.debug
+    it ('should be able to continue to review benefits' , async () => {
+        // datos
+        // selector unico de webdriverIO
+        const findButton = await VisionInsurance.btnFindMyBenefits;
+        await findButton.click();
+
+        // validaciones
+        await expect(VisionInsurance.btnStarOrder).toBeDisplayed();
+
+    });
 
 });
