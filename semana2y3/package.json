@@ -4,7 +4,8 @@
   "description": "this is a webdriverIO repository",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio"
+    "test": "npx wdio",
+    "test:2" : "npx wdio --mochaOpts.grep EJERCICIO2"
   },
   "author": "pablo",
   "license": "ISC",

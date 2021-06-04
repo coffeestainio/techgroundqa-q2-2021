@@ -24,8 +24,8 @@ describe('Find my benefits',() => {
 
     it('should be able to navigate to find my benefits from the home page', async () => {       
         // acciones
-        const routerLink = await HomePage.linkFindMyBenefits;
-        await routerLink.click();
+        // const routerLink = await ;
+        await (await HomePage.linkFindMyBenefits).click();
         
         // verificacion
         await expect(browser).toHaveUrlContaining(VisionInsurance.pageTitle);
