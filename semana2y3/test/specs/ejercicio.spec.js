@@ -50,10 +50,12 @@ describe('Find my benefits',() => {
         const firstNameWrapper = await VisionInsurance.wrapperFirstName;
         const lastNameWrapper = await VisionInsurance.wrapperLastName;
         const zipCodeWrapper = await VisionInsurance.wrapperZipCode;
+
+        const classToShowIsValid = 'is-good';
         
-        await expect(firstNameWrapper).toHaveElementClass('is-valid');
-        await expect(lastNameWrapper).toHaveElementClass('is-valid');
-        await expect(zipCodeWrapper).toHaveElementClass('is-valid');
+        await expect(firstNameWrapper).toHaveElementClass(classToShowIsValid);
+        await expect(lastNameWrapper).toHaveElementClass(classToShowIsValid);
+        await expect(zipCodeWrapper).toHaveElementClass(classToShowIsValid);
 
     });
 
