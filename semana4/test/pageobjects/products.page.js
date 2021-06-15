@@ -17,6 +17,7 @@ class ProductsPage{
 
     productItem(productName) { return $(`//div[@class='inventory_item' and contains(.,'${productName}')]`)}
     btn(element) { return element.$(`button`)}
+    price(element) { return element.$(`.inventory_item_price`)}
 }
 
 module.exports = new ProductsPage();

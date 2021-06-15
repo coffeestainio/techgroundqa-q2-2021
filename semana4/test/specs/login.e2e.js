@@ -9,15 +9,15 @@ describe('SauceDemo - Login', () => {
     
     it('should login with valid credentials', async () => {
         await LoginPage.login('standard_user','secret_sauce');
-        await expect(browser).toHaveUrlContaining(ProductPage.pageTitle);
-        await expect(await ProductPage.title).toBeDisplayed();
+
+        await browser.validateOnPage({pageURL: ProductPage.pageTitle, elementHook: ProductPage.title});
+
         await expect(await LoginPage.errorMessage).not.toBeDisplayed({time:2000});
     });
 
     it('should login even on performance glitch', async () => {
         await LoginPage.login('performance_glitch_user','secret_sauce');
-        await expect(browser).toHaveUrlContaining(ProductPage.pageTitle);
-        await expect(await ProductPage.title).toBeDisplayed();
+        await browser.validateOnPage({pageURL: ProductPage.pageTitle, elementHook: ProductPage.title});
         await expect(await LoginPage.errorMessage).not.toBeDisplayed({time:2000});
     });
 

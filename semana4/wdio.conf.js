@@ -73,7 +73,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -171,6 +171,7 @@ exports.config = {
      * @param  {[type]} execArgv list of string arguments passed to the worker process
      */
     // onWorkerStart: function (cid, caps, specs, args, execArgv) {
+    //     console.log('Run OnWorker')
     // },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
@@ -188,14 +189,26 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        console.log('Run before');
+
+        // browser.validateOnPage({pageURL: dadasda})
+        // browser.validateOnPage({pageURL: dadasda, elementHook: asdasda})
+        browser.addCommand('validateOnPage', async function ({pageURL, elementHook}) {        
+            if (elementHook) {
+                await elementHook;
+            }
+            await expect(browser).toHaveUrlContaining(pageURL);
+        });
+
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
     // beforeCommand: function (commandName, args) {
+    //     console.log('Running command: ', commandName)
     // },
     /**
      * Hook that gets executed before the suite starts
