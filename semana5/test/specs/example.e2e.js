@@ -21,9 +21,7 @@ describe('My Login application', () => {
 
     describe('Exception 1 ', () => {
         it('Failure', async () => {
-
             await browser.setTimeout({ implicit: 500 })
-
             await (await elements.btAdd).click();
             const element2 = await elements.inputRow2;
             await element2.isDisplayed();
@@ -68,7 +66,6 @@ describe('My Login application', () => {
             await (await elements.inputRow1).setValue('');
 
             await expect(await elements.inputRow1).toHaveText('');
-
             await expect(await elements.inputRow1).toBeVisble();
             
         });
@@ -83,8 +80,7 @@ describe('My Login application', () => {
 
         it('Success', async () => {
             const ins = await elements.instrucctions;
-            await (await elements.btAdd).click();
-            
+            await (await elements.btAdd).click();       
             await expect(await elements.instrucctions).not.toExist();
             
         });
