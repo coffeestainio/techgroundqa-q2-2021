@@ -97,7 +97,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.saucedemo.com',
+    baseUrl: 'https://practicetestautomation.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -107,7 +107,7 @@ exports.config = {
     connectionRetryTimeout: 120000,
     //
     // Default request retries count
-    connectionRetryCount: 0,
+    connectionRetryCount: 3,
     //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
@@ -144,7 +144,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 30000
+        timeout: 8000
     },
     //
     // =====
@@ -171,7 +171,6 @@ exports.config = {
      * @param  {[type]} execArgv list of string arguments passed to the worker process
      */
     // onWorkerStart: function (cid, caps, specs, args, execArgv) {
-    //     console.log('Run OnWorker')
     // },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
@@ -189,26 +188,14 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    before: function (capabilities, specs) {
-        console.log('Run before');
-
-        // browser.validateOnPage({pageURL: dadasda})
-        // browser.validateOnPage({pageURL: dadasda, elementHook: asdasda})
-        browser.addCommand('validateOnPage', async function ({pageURL, elementHook}) {        
-            if (elementHook) {
-                await elementHook;
-            }
-            await expect(browser).toHaveUrlContaining(pageURL);
-        });
-
-    },
+    // before: function (capabilities, specs) {
+    // },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
     // beforeCommand: function (commandName, args) {
-    //     console.log('Running command: ', commandName)
     // },
     /**
      * Hook that gets executed before the suite starts
