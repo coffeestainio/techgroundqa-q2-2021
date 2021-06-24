@@ -1,0 +1,16 @@
+{
+  "name": "semana6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "install": "npx playwright install",
+    "codegen":"npx playwright codegen"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.12.2"
+  }
+}
